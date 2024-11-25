@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.84" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
+   <top>
+      <BorderPane prefHeight="97.0" prefWidth="650.0" style="-fx-background-color: #0589ff;" BorderPane.alignment="CENTER">
+         <center>
+            <Text fill="#571515" opacity="0.77" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Dashboard" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Al Bayan Bold" size="26.0" />
+               </font>
+            </Text>
+         </center>
+         <right>
+            <Button fx:id="goBackButton" mnemonicParsing="false" onAction="#handleGoBack" style="-fx-background-color: yellow;" text="&lt;- Go Back" textFill="#863737" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </top>
+   <left>
+      <BorderPane prefHeight="403.0" prefWidth="155.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+         <top>
+            <VBox prefHeight="401.0" prefWidth="155.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" opacity="0.94" style="-fx-background-color: yellow; -fx-border-color: red;" text="Make Announcement" textFill="#7c1a1a" />
+                  <Button fx:id="TrackPayment" mnemonicParsing="false" onAction="#handleTrackPayment" prefHeight="17.0" prefWidth="102.0" style="-fx-background-color: yellow; -fx-border-color: red;" text="Track Payment" textAlignment="RIGHT" textFill="#8a2e2e" />
+                  <Button fx:id="ManageEvent" mnemonicParsing="false" onAction="#handleCreateEvent" style="-fx-background-color: pink; -fx-border-color: black;" text="Create Event" textFill="#942e2e" />
+                  <Button fx:id="Dispute" mnemonicParsing="false" onAction="#handleDispute" style="-fx-background-color: pink; -fx-border-color: black;" text="Handle Disputes" textFill="#9a2e2e" />
+                 
+                  <Button fx:id="Notifications" mnemonicParsing="false" onAction="#handleCreateNotifications" style="-fx-background-color: green; -fx-border-color: blue;" text="Automate Notifications" textFill="#7c2525" />
+                  <Button fx:id="Visitor" onAction="#handleVisitors" style="-fx-background-color: yellow; -fx-border-color: red;" text="Automate Visitor Scheduling" textFill="#8a3131" />
+                  <Button fx:id="Survillence" mnemonicParsing="false" onAction="#handleSurvillence" style="-fx-background-color: yellow; -fx-border-color: red;" text="Automate Survelliance" textFill="#802c2c" />
+                  <Button  fx:id="Maintenance" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: blue;" text="View Maintenance Request" onAction="#handleMaintenance"/>
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </left>
+</BorderPane>

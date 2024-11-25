@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <BorderPane prefHeight="87.0" prefWidth="600.0" style="-fx-background-color: green; -fx-border-color: yellow;" BorderPane.alignment="CENTER">
+         <center>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Create Event for Community" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+         </center>
+      </BorderPane>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="eventNameTextField" promptText="Enter Event Name" translateY="20.0" />
+            <TextField fx:id="eventDescriptionTextField" promptText="Enter Description" translateY="70.0" />
+            <TextField fx:id="eventManagerTextField" promptText="Enter the Manager ID" translateY="120.0" />
+            <Button fx:id="submitEventButton" mnemonicParsing="false" text="Add" translateX="500.0" translateY="150.0" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

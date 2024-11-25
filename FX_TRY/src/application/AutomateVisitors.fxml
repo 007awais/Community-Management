@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+   <top>
+      <BorderPane prefHeight="88.0" prefWidth="600.0" style="-fx-background-color: Red;" BorderPane.alignment="CENTER">
+         <center>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Visitors Scheduling" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+         </center>
+         <right>
+            <Button fx:id="Addvisitor" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: yellow;" text="Add Visitor"  BorderPane.alignment="CENTER"  onAction="#AddVisitor"/>
+         </right>
+      </BorderPane>
+   </top>
+   <center>
+      <TextField fx:id="visitorIdField" promptText="Enter the visitor ID to get Details" translateX="10.0" translateY="-20.0" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <Button fx:id="searchButton" mnemonicParsing="false" text="Search"  translateX="-10.0" translateY="20.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <TableView fx:id="visitorTable" prefHeight="200.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="visitorIdColumn" prefWidth="75.0" text="VisitorID" />
+                  <TableColumn fx:id="visitorNameColumn" prefWidth="96.0" text="VisitorName" />
+                  <TableColumn fx:id="visitDateColumn" prefWidth="89.0" text="VisitDate" />
+                  <TableColumn fx:id="confirmationStatusColumn" prefWidth="129.0" text="ConfirmationStatus" />
+                  <TableColumn fx:id="adminIdColumn" prefWidth="72.0" text="AdminID" />
+               </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </bottom>
+</BorderPane>

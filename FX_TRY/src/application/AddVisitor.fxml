@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddVisitorController">
+   <top>
+      <BorderPane prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: Red;" BorderPane.alignment="CENTER">
+         <center>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule a Resident" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Text>
+         </center>
+      </BorderPane>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" spacing="10" alignment="CENTER">
+         <children>
+            <TextField fx:id="visitorNameField" promptText="Enter the Visitor Name" />
+            <TextField fx:id="confirmationStatusField" promptText="Enter Confirmation Status" />
+            <TextField fx:id="adminIdField" promptText="Enter the Admin ID" />
+            <Button mnemonicParsing="false" text="Add" onAction="#handleAddButtonAction" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
