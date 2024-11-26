@@ -3,10 +3,16 @@ package application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -34,6 +40,9 @@ public class ParkingController {
     private TableColumn<Parking, String> bookingTimeColumn;
 
     private ObservableList<Parking> parkingList;
+    
+    @FXML
+    private Button book;
 
     @FXML
     public void initialize() {
@@ -87,4 +96,28 @@ public class ParkingController {
         // Set the data into the TableView
         parkingTable.setItems(parkingList);
     }
+    
+    
+    public void Gotoupdate() {
+        try {
+            // Load the new scene's FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("BookSlot.fxml"));
+            Parent newSceneRoot = loader.load();
+
+            // Get the current stage (window) from the button's scene
+            Stage currentStage = (Stage) book.getScene().getWindow();
+
+            // Set the new scene on the current stage
+            Scene newScene = new Scene(newSceneRoot);
+            currentStage.setScene(newScene);
+
+            // Optionally, set the title of the new stage (window)
+            currentStage.setTitle("BookSlot");
+
+            // Show the new scene
+            currentStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Failed to load the Update Payment screen.");
+        }
 }
