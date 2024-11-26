@@ -19,7 +19,7 @@
             </Text>
          </center>
          <right>
-            <Button mnemonicParsing="false" style="-fx-background-color: yellow;" text="Reserve Slot" BorderPane.alignment="CENTER" />
+            <Button fx:id="book" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Reserve Slot" BorderPane.alignment="CENTER"  onAction="#Gotoupdate"/>
          </right>
       </BorderPane>
    </top>
