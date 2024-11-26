@@ -7,8 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BookParkingController">
    <top>
       <BorderPane prefHeight="96.0" prefWidth="600.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
          <center>
@@ -23,12 +22,15 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField promptText="Enter Vehicle ID" translateY="60.0" />
-            <TextField promptText="Enter Resident ID" translateY="70.0" />
-            <TextField promptText="Enter Booking Status" translateY="80.0" />
-            <TextField promptText="Enter Time Duration " translateY="90.0" />
-            <Button mnemonicParsing="false" style="-fx-background-color: red; -fx-border-color: yellow;" text="Book" translateX="450.0" translateY="150.0" />
+            <!-- Add fx:id for each TextField -->
+            <TextField fx:id="vehicleIdField" promptText="Enter Vehicle ID" translateY="60.0" />
+            <TextField fx:id="residentIdField" promptText="Enter Resident ID" translateY="70.0" />
+            <TextField fx:id="bookingStatusField" promptText="Enter Booking Status" translateY="80.0" />
+            <TextField fx:id="timeDurationField" promptText="Enter Time Duration " translateY="90.0" />
+            <!-- Add onAction to trigger the method -->
+            <Button fx:id="bookButton" mnemonicParsing="false" style="-fx-background-color: red; -fx-border-color: yellow;" text="Book" translateX="450.0" translateY="150.0" />
          </children>
       </VBox>
    </center>
 </BorderPane>
+
