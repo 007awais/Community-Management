@@ -16,7 +16,7 @@
                 <Button fx:id="maintenance" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: red;" text="Maintenance Request" onAction="#handleMaintenanceRequest"  />
               </buttons>
             </ButtonBar>
-            <Button mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: red;" text="Bill adjustement" />
+            <Button  fx:id="Bill" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: red;" text="Bill adjustement" onAction="#handleBill" />
             <Button  fx:id="fee" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: red;" text="Pay for Event" onAction="#handleFee" />
             <Button  fx:id="Parking" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: red;" text="Automate Parking Space" onAction="#handleParking" />
             <Button fx:id="RSVP" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: red;" text="RSVP Events"  onAction="#handleRSVP"/>

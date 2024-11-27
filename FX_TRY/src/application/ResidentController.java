@@ -16,6 +16,7 @@ public class ResidentController {
 	public Button fee;
 	public Button RSVP;
 	public Button Parking;
+	public Button Bill;
 
     // Method to handle "Go Back" button click
     public void handleGoBack() {
@@ -90,8 +91,7 @@ public class ResidentController {
             // Load the Dispute.fxml view
             FXMLLoader loader = new FXMLLoader(getClass().getResource("RSVP.fxml"));
 
-            // Create and set the controller for the scene
-        
+            
 
             // Load the scene
             Scene disputeScene = new Scene(loader.load());
@@ -136,5 +136,38 @@ public class ResidentController {
             System.err.println("Failed to load the Visitor scene");
         }
     }
+    
+    public void handleBill()
+    {
+    	try {
+            // Load the Dispute.fxml view
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("BillAdjustement.fxml"));
+
+            // Create and set the controller for the scene
+        
+
+            // Load the scene
+            Scene disputeScene = new Scene(loader.load());
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) goBackButton.getScene().getWindow(); 
+            stage.setScene(disputeScene);
+            stage.show();
+
+            // Optionally log success
+            System.out.println("Bill Adjustement Scene  displayed, controller dynamically assigned.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Failed to load the Visitor scene");
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     
 }
