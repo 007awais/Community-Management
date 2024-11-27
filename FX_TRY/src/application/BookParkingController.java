@@ -3,8 +3,6 @@ package application;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -47,11 +45,24 @@ public class BookParkingController {
 
         // Validate input fields
         if (vehicleId.isEmpty() || residentId.isEmpty() || bookingStatus.isEmpty() || timeDuration.isEmpty()) {
-            showAlert(AlertType.ERROR, "Validation Error", "Please fill in all fields.");
+            System.out.println("Validation Error: Please fill in all fields.");
             return;
         }
 
+        System.out.println("Time Duration: " + timeDuration);  // Debugging line
+
         try {
+            // Parse or compute booking_time
+            java.sql.Timestamp bookingTime;
+            if (timeDuration.matches("\\d+")) { // Check if the timeDuration is a number
+                long currentTimeMillis = System.currentTimeMillis();
+                long durationMillis = Long.parseLong(timeDuration) * 3600 * 1000; // Convert hours to milliseconds
+                bookingTime = new java.sql.Timestamp(currentTimeMillis + durationMillis);
+            } else {
+                System.out.println("Invalid Time Format: Time duration should be in numeric hours.");
+                return;
+            }
+
             // Establish a database connection
             Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
@@ -61,15 +72,15 @@ public class BookParkingController {
             pstmt.setString(1, vehicleId);
             pstmt.setString(2, residentId);
             pstmt.setString(3, bookingStatus);
-            pstmt.setString(4, timeDuration);
+            pstmt.setTimestamp(4, bookingTime); // Correct datatype
 
             // Execute the query
             int rowsInserted = pstmt.executeUpdate();
 
             if (rowsInserted > 0) {
-                showAlert(AlertType.INFORMATION, "Success", "Parking slot booked successfully!");
+                System.out.println("Success: Parking slot booked successfully!");
             } else {
-                showAlert(AlertType.ERROR, "Failure", "Failed to book the parking slot.");
+                System.out.println("Failure: Failed to book the parking slot.");
             }
 
             // Close the database connection
@@ -77,16 +88,9 @@ public class BookParkingController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            showAlert(AlertType.ERROR, "Database Error", "An error occurred while booking the parking slot.");
+            System.out.println("Database Error: An error occurred while booking the parking slot.");
         }
     }
 
-    // Helper method to display alerts
-    private void showAlert(AlertType alertType, String title, String message) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
 }
+

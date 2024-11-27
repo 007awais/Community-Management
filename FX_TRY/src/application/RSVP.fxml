@@ -19,7 +19,7 @@
             </Text>
          </center>
          <right>
-            <Button fx:id="Add" mnemonicParsing="false" onAction="#GotoUpdate" style="-fx-background-color: yellow;" text="Add RSVP" BorderPane.alignment="CENTER" />
+            <Button fx:id="Add" mnemonicParsing="false"  style="-fx-background-color: yellow;" text="Add RSVP" BorderPane.alignment="CENTER" />
          </right>
       </BorderPane>
    </top>

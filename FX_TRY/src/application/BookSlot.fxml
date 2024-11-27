@@ -20,16 +20,15 @@
       </BorderPane>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <!-- Add fx:id for each TextField -->
-            <TextField fx:id="vehicleIdField" promptText="Enter Vehicle ID" translateY="60.0" />
-            <TextField fx:id="residentIdField" promptText="Enter Resident ID" translateY="70.0" />
-            <TextField fx:id="bookingStatusField" promptText="Enter Booking Status" translateY="80.0" />
-            <TextField fx:id="timeDurationField" promptText="Enter Time Duration " translateY="90.0" />
-            <!-- Add onAction to trigger the method -->
-            <Button fx:id="bookButton" mnemonicParsing="false" style="-fx-background-color: red; -fx-border-color: yellow;" text="Book" translateX="450.0" translateY="150.0" />
+            <TextField fx:id="vehicleIdField" promptText="Enter Vehicle ID" />
+            <TextField fx:id="residentIdField" promptText="Enter Resident ID" />
+            <TextField fx:id="bookingStatusField" promptText="Enter Booking Status" />
+            <TextField fx:id="timeDurationField" promptText="Enter Time Duration" />
+            <Button fx:id="bookButton" mnemonicParsing="false" text="Book" style="-fx-background-color: red; -fx-border-color: yellow;" />
          </children>
       </VBox>
    </center>
 </BorderPane>
+
