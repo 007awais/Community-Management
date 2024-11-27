@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.File;
+import java.util.List;
 
 public class Survillence {
 
@@ -32,6 +33,8 @@ public class Survillence {
     @FXML
     private TableColumn<LogEntry, String> eventColumn;
 
+    private final ImageLoader imageLoader = new ImageLoader();
+
     @FXML
     private void initialize() {
         // Initialize table columns
@@ -42,58 +45,39 @@ public class Survillence {
     @FXML
     private void onViewLiveFeed() {
         // Show images and hide the table
-        logTable.setVisible(false);
-        image1.setVisible(true);
-        image2.setVisible(true);
-        image3.setVisible(true);
-      
-        File folder = new File("/Users/apple/Downloads/SDA_Images");
+        toggleLogTableVisibility(false);
 
-        File[] imageFiles = folder.listFiles((dir, name) -> name.endsWith(".jpg") || name.endsWith(".png"));
-        if (imageFiles != null && imageFiles.length > 0) {
-            if (imageFiles.length > 0) {
-                image1.setImage(new Image(imageFiles[0].toURI().toString()));
-                image1.setVisible(true);
-            }
-            if (imageFiles.length > 1) {
-                image2.setImage(new Image(imageFiles[1].toURI().toString()));
-                image2.setVisible(true);
-            }
-            if (imageFiles.length > 2) {
-                image3.setImage(new Image(imageFiles[2].toURI().toString()));
-                image3.setVisible(true);
-            }
-        } else {
-            System.out.println("No images found in the folder!");
-        }
-
+        List<Image> images = imageLoader.loadImagesFromFolder("/Users/apple/Downloads/SDA_Images");
+        displayImages(images);
     }
 
     @FXML
     private void onViewLog() {
         // Hide images and show the table
-        image1.setVisible(false);
-        image2.setVisible(false);
-        image3.setVisible(false);
-       
+        toggleLogTableVisibility(true);
 
-        // Create dummy data for the log table
-        ObservableList<LogEntry> logData = FXCollections.observableArrayList(
-            new LogEntry("Camera 1", "Person is entering Gate 1"),
-            new LogEntry("Camera 2", "Car is entering from Gate 4"),
-            new LogEntry("Camera 3", "Suspicious movement detected near Gate 2"),
-            new LogEntry("Camera 4", "Delivery van exiting Gate 3"),
-            new LogEntry("Camera 1", "Person is loitering near the main entrance"),
-            new LogEntry("Camera 2", "Crowd gathering at Gate 1"),
-            new LogEntry("Camera 3", "Bike parked near restricted area"),
-            new LogEntry("Camera 4", "Unauthorized access attempt at Gate 4"),
-            new LogEntry("Camera 1", "Maintenance staff entering Gate 3"),
-            new LogEntry("Camera 2", "Security guard patrolling near Gate 2")
-        );
-
-        // Populate the table and make it visible
+        // Get log data and populate the table
+        ObservableList<LogEntry> logData = LogDataProvider.getLogData();
         logTable.setItems(logData);
-        logTable.setVisible(true);
+    }
+
+    private void toggleLogTableVisibility(boolean showLogTable) {
+        logTable.setVisible(showLogTable);
+        image1.setVisible(!showLogTable);
+        image2.setVisible(!showLogTable);
+        image3.setVisible(!showLogTable);
+    }
+
+    private void displayImages(List<Image> images) {
+        if (images.size() > 0) {
+            image1.setImage(images.get(0));
+        }
+        if (images.size() > 1) {
+            image2.setImage(images.get(1));
+        }
+        if (images.size() > 2) {
+            image3.setImage(images.get(2));
+        }
     }
 
     // Class for log entries
@@ -113,5 +97,44 @@ public class Survillence {
         public String getEvent() {
             return event;
         }
+    }
+}
+
+// Utility class for loading images
+class ImageLoader {
+
+    public List<Image> loadImagesFromFolder(String folderPath) {
+        File folder = new File(folderPath);
+        File[] imageFiles = folder.listFiles((dir, name) -> name.endsWith(".jpg") || name.endsWith(".png"));
+
+        if (imageFiles != null) {
+            return FXCollections.observableArrayList(
+                new Image(imageFiles[0].toURI().toString()),
+                imageFiles.length > 1 ? new Image(imageFiles[1].toURI().toString()) : null,
+                imageFiles.length > 2 ? new Image(imageFiles[2].toURI().toString()) : null
+            ).filtered(img -> img != null);
+        }
+
+        System.out.println("No images found in the folder!");
+        return FXCollections.observableArrayList();
+    }
+}
+
+// Utility class for providing log data
+class LogDataProvider {
+
+    public static ObservableList<Survillence.LogEntry> getLogData() {
+        return FXCollections.observableArrayList(
+            new Survillence.LogEntry("Camera 1", "Person is entering Gate 1"),
+            new Survillence.LogEntry("Camera 2", "Car is entering from Gate 4"),
+            new Survillence.LogEntry("Camera 3", "Suspicious movement detected near Gate 2"),
+            new Survillence.LogEntry("Camera 4", "Delivery van exiting Gate 3"),
+            new Survillence.LogEntry("Camera 1", "Person is loitering near the main entrance"),
+            new Survillence.LogEntry("Camera 2", "Crowd gathering at Gate 1"),
+            new Survillence.LogEntry("Camera 3", "Bike parked near restricted area"),
+            new Survillence.LogEntry("Camera 4", "Unauthorized access attempt at Gate 4"),
+            new Survillence.LogEntry("Camera 1", "Maintenance staff entering Gate 3"),
+            new Survillence.LogEntry("Camera 2", "Security guard patrolling near Gate 2")
+        );
     }
 }
