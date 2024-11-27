@@ -132,6 +132,12 @@ CREATE TABLE Parking (
     FOREIGN KEY (resident_id) REFERENCES Resident(resident_id)  -- Foreign key linking to the Resident table
 );
 
+CREATE TABLE Bill_Adjustment (
+    complaint_id INT AUTO_INCREMENT PRIMARY KEY,   -- Automatically generated complaint ID
+    description TEXT NOT NULL,                      -- Detailed description of the complaint
+    status ENUM('Pending', 'Resolved', 'In Progress') DEFAULT 'Pending',  -- Status of the complaint
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Timestamp when the complaint was created
+);
 
 
 -- Insert data into Resident table
@@ -286,6 +292,15 @@ INSERT INTO Parking (vehicle_id, resident_id, booking_status, time_duration, boo
 ('JKL3456', 5, 'Available', 0, '2024-11-25 14:00:00'),
 ('PQR8765', 6, 'Booked', 90, '2024-11-25 15:30:00'),
 ('STU6547', 7, 'Occupied', 150, '2024-11-25 17:00:00');
+
+INSERT INTO Bill_Adjustment (description, status)
+VALUES 
+('Complaint regarding overcharging in the latest bill. Customer was charged extra for maintenance fees.', 'Pending'),
+('Resident claims the bill amount is incorrect due to missing discounts on the last payment.', 'In Progress'),
+('Complaint about the delay in adjusting the payment made for the last month.', 'Resolved'),
+('Customer requests clarification on the service charges added to their recent bill.', 'Pending'),
+('Complaint regarding incorrect meter reading reflected in the bill for the last quarter.', 'Resolved');
+
 
 
     
