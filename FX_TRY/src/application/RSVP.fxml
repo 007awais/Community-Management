@@ -10,16 +10,16 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RSVPController">
    <top>
-      <BorderPane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #00FFFF;" BorderPane.alignment="CENTER">
          <center>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RSVP for Events" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="System Bold" size="26.0" />
+                  <Font name="System Bold" size="34.0" />
                </font>
             </Text>
          </center>
          <right>
-            <Button fx:id="Add" mnemonicParsing="false"  style="-fx-background-color: yellow;" text="Add RSVP" BorderPane.alignment="CENTER" />
+            <Button fx:id="Add" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Add RSVP" BorderPane.alignment="CENTER" />
          </right>
       </BorderPane>
    </top>

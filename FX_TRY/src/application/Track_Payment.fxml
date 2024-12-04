@@ -10,7 +10,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TrackPayment">
    <top>
-      <BorderPane prefHeight="116.0" prefWidth="600.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="116.0" prefWidth="600.0" style="-fx-background-color: #00FFFF;" BorderPane.alignment="CENTER">
          <center>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Track Payment for Residents" BorderPane.alignment="CENTER">
                <font>
@@ -19,7 +19,7 @@
             </Text>
          </center>
          <right>
-            <Button fx:id="UpdateData" mnemonicParsing="false" text="Update Data" BorderPane.alignment="CENTER" onAction="#Gotoupdate"/>
+            <Button fx:id="UpdateData" mnemonicParsing="false" onAction="#Gotoupdate" text="Update Data" BorderPane.alignment="CENTER" />
          </right>
       </BorderPane>
    </top>
@@ -47,4 +47,3 @@
       <Text fx:id="statusText" fill="black" text="Status will appear here" BorderPane.alignment="CENTER" />
    </left>
 </BorderPane>
-

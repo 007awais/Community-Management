@@ -24,7 +24,7 @@
          <children>
             <TextField fx:id="complaintIdField" promptText="Enter the Complaint ID" translateY="30.0" />
             <TextField fx:id="descriptionField" promptText="Provide Description" translateY="60.0" />
-            <TextField fx:id="statusField" promptText="Enter Status" translateY="90.0" />
+            <TextField promptText="Enter Status" translateY="90.0" />
             <Button fx:id="submitButton" mnemonicParsing="false" text="Submit " translateX="500.0" translateY="150.0" />
          </children>
       </VBox>

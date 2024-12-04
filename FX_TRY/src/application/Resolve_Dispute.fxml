@@ -3,24 +3,24 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
-    prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" 
-    xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ResolveDispute">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ResolveDispute">
 
     <right>
         <BorderPane prefHeight="400.0" prefWidth="650.0" style="-fx-border-color: yellow; -fx-background-color: grey;" BorderPane.alignment="CENTER">
             
             <top>
-                <BorderPane prefHeight="97.0" prefWidth="598.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+                <BorderPane prefHeight="97.0" prefWidth="598.0" style="-fx-background-color: #00FFFF;" BorderPane.alignment="CENTER">
                     <center>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: red;" text="Dispute Resolve Centre" BorderPane.alignment="CENTER">
+                        <Text fill="#1e0505" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: red;" text="Dispute Resolve Centre" BorderPane.alignment="CENTER">
                             <font>
-                                <Font name="System Bold" size="26.0" />
+                                <Font name="System Bold" size="31.0" />
                             </font>
                         </Text>
                     </center>
@@ -32,12 +32,19 @@
                     <children>
                         <TextField fx:id="firstPartyIdField" prefHeight="25.0" prefWidth="196.0" promptText="Enter the first Party ID" translateY="10.0" />
                         <TextField fx:id="secondPartyIdField" promptText="Enter the Second Party ID" translateY="30.0" />
-                        <RadioButton fx:id="activeDisputeRadioButton" mnemonicParsing="false" style="-fx-background-color: red;" text="Case in Process" translateY="60.0" />
+                        <RadioButton fx:id="activeDisputeRadioButton" mnemonicParsing="false" style="-fx-background-color: #00FFFF;" text="Case in Process" translateY="60.0" />
                         <TextField fx:id="removeDisputeIdField" promptText="Enter the Dispute ID to remove" translateY="80.0" />
                         <Button fx:id="removeButton" mnemonicParsing="false" style="-fx-background-color: red;" text="Remove" translateY="110.0" />
                     </children>
                 </VBox>
             </left>
+         <center>
+            <ImageView fitHeight="303.0" fitWidth="402.0" pickOnBounds="true" smooth="false" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../../../Downloads/0df20888de594c3b26f369954222a90d.jpg" />
+               </image>
+            </ImageView>
+         </center>
         </BorderPane>
     </right>
 </BorderPane>

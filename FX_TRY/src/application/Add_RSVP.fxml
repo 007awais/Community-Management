@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -9,28 +11,35 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Add_RSVP">
    <top>
-      <BorderPane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: pink;" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #00BFFF;" BorderPane.alignment="CENTER">
          <center>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add RSVP" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="System Bold" size="23.0" />
+                  <Font name="System Bold" size="44.0" />
                </font>
             </Text>
          </center>
       </BorderPane>
    </top>
-   <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+   <bottom>
+      <VBox prefHeight="303.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField promptText="Enter Residetn ID" translateY="30.0" />
+            <TextField prefHeight="30.0" prefWidth="600.0" promptText="Enter Residetn ID" translateY="30.0" />
             <TextField promptText="Enter Event ID" translateY="60.0" />
             <TextField promptText="Enter Status" translateY="90.0" />
-            <Button layoutY="100.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Add" translateX="450.0" translateY="150.0">
+            <Button layoutY="100.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="78.0" style="-fx-background-color: #00BFFF;" text="Add" translateX="450.0" translateY="150.0">
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Bold Italic" size="20.0" />
                </font>
             </Button>
          </children>
       </VBox>
-   </center>
+   </bottom>
+   <left>
+      <ImageView fitHeight="60.0" fitWidth="601.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../../../../Downloads/login/background.jpg" />
+         </image>
+      </ImageView>
+   </left>
 </BorderPane>

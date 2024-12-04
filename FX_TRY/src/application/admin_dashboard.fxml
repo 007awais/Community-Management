@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -10,14 +15,17 @@
    <top>
       <BorderPane prefHeight="97.0" prefWidth="650.0" style="-fx-background-color: #0589ff;" BorderPane.alignment="CENTER">
          <center>
-            <Text fill="#571515" opacity="0.77" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Dashboard" BorderPane.alignment="CENTER">
+            <Text opacity="0.77" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Dashboard" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Al Bayan Bold" size="26.0" />
+                  <Font name="Al Bayan Bold" size="32.0" />
                </font>
             </Text>
          </center>
          <right>
-            <Button fx:id="goBackButton" mnemonicParsing="false" onAction="#handleGoBack" style="-fx-background-color: yellow;" text="&lt;- Go Back" textFill="#863737" BorderPane.alignment="CENTER" />
+            <Button fx:id="goBackButton" mnemonicParsing="false" onAction="#handleGoBack" style="-fx-background-color: yellow;" text="&lt;- Go Back" textFill="#863737" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></Button>
          </right>
       </BorderPane>
    </top>
@@ -26,18 +34,70 @@
          <top>
             <VBox prefHeight="401.0" prefWidth="155.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" opacity="0.94" style="-fx-background-color: yellow; -fx-border-color: red;" text="Make Announcement" textFill="#7c1a1a" />
-                  <Button fx:id="TrackPayment" mnemonicParsing="false" onAction="#handleTrackPayment" prefHeight="17.0" prefWidth="102.0" style="-fx-background-color: yellow; -fx-border-color: red;" text="Track Payment" textAlignment="RIGHT" textFill="#8a2e2e" />
-                  <Button fx:id="ManageEvent" mnemonicParsing="false" onAction="#handleCreateEvent" style="-fx-background-color: pink; -fx-border-color: black;" text="Create Event" textFill="#942e2e" />
-                  <Button fx:id="Dispute" mnemonicParsing="false" onAction="#handleDispute" style="-fx-background-color: pink; -fx-border-color: black;" text="Handle Disputes" textFill="#9a2e2e" />
+                  <Button mnemonicParsing="false" opacity="0.94" prefHeight="22.0" prefWidth="188.0" style="-fx-background-color: #45d4f4;" text="Make Announcement" textFill="#1a247a">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font></Button>
+                  <Button fx:id="TrackPayment" mnemonicParsing="false" onAction="#handleTrackPayment" prefHeight="28.0" prefWidth="201.0" style="-fx-background-color: #45d4f4;" text="Track Payment" textAlignment="RIGHT" textFill="#081546">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
+                  <Button fx:id="ManageEvent" mnemonicParsing="false" onAction="#handleCreateEvent" prefHeight="28.0" prefWidth="206.0" style="-fx-background-color: #1d6df9;" text="Create Event">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font></Button>
+                  <Button fx:id="Dispute" mnemonicParsing="false" onAction="#handleDispute" prefHeight="28.0" prefWidth="191.0" style="-fx-background-color: #1d6df9;" text="Handle Disputes" textFill="#252222">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Button>
                  
-                  <Button fx:id="Notifications" mnemonicParsing="false" onAction="#handleCreateNotifications" style="-fx-background-color: green; -fx-border-color: blue;" text="Automate Notifications" textFill="#7c2525" />
-                  <Button fx:id="Visitor" onAction="#handleVisitors" style="-fx-background-color: yellow; -fx-border-color: red;" text="Automate Visitor Scheduling" textFill="#8a3131" />
-                  <Button fx:id="Survillence" mnemonicParsing="false" onAction="#handleSurvillence" style="-fx-background-color: yellow; -fx-border-color: red;" text="Automate Survelliance" textFill="#802c2c" />
-                  <Button  fx:id="Maintenance" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: blue;" text="View Maintenance Request" onAction="#handleMaintenance"/>
+                  <Button fx:id="Notifications" mnemonicParsing="false" onAction="#handleCreateNotifications" prefHeight="28.0" prefWidth="195.0" style="-fx-background-color: yellow;" text="Automate Notifications" textFill="#0c0825">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Button>
+                  <Button fx:id="Visitor" onAction="#handleVisitors" prefHeight="28.0" prefWidth="208.0" style="-fx-background-color: yellow;" text="Automate Visitor Scheduling" textFill="#250d0d">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font></Button>
+                  <Button fx:id="Survillence" mnemonicParsing="false" onAction="#handleSurvillence" prefHeight="28.0" prefWidth="208.0" style="-fx-background-color: yellow;" text="Automate Survelliance" textFill="#360f0f">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Button>
+                  <Button fx:id="Maintenance" mnemonicParsing="false" onAction="#handleMaintenance" prefHeight="28.0" prefWidth="216.0" style="-fx-background-color: #1df93b;" text="View Maintenance Request">
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.0737999975681305" green="0.1560915857553482" blue="0.8199999928474426" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Button>
+                  <ImageView fitHeight="178.0" fitWidth="188.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/login/communi3y.jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </VBox>
          </top>
       </BorderPane>
    </left>
+   <center>
+      <ImageView fitHeight="402.0" fitWidth="465.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../../../../Downloads/login/interior.jpeg" />
+         </image>
+      </ImageView>
+   </center>
 </BorderPane>

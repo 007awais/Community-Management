@@ -135,3 +135,20 @@ public class MaintenanceRequestController {
     }
 }
 
+
+
+// Desing Patterns we Used:
+
+//Model View Controller:
+//The Controller (MaintenanceRequestController) handles the interaction between the View (TableView) and the Model (MaintenanceRequest data objects).
+// Data Access Object:
+//The loadDataFromDatabase method resembles the behavior of a DAO by handling database interactions.
+//Observer:
+//The ObservableList automatically updates the TableView when data changes. This reflects the Observer pattern, where TableView observes changes in the ObservableList and updates the UI accordingly.
+//Factory Method:
+//Singelton:
+//Driver Manager class is implemented as the singleton class
+// AdminController class is aslo implemented from where all the redirection are provided
+
+
+

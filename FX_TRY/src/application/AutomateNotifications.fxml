@@ -3,29 +3,38 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <BorderPane prefHeight="116.0" prefWidth="600.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="116.0" prefWidth="600.0" style="-fx-background-color: #00BFFF;" BorderPane.alignment="CENTER">
          <center>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Notification List" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="System Bold" size="29.0" />
+                  <Font name="System Bold" size="42.0" />
                </font>
             </Text>
          </center>
          <right>
             <!-- Button to open Send Notification form -->
-            <Button fx:id="update" mnemonicParsing="false" style="-fx-background-color: red; -fx-border-color: yellow;" text="Send Notification" BorderPane.alignment="CENTER" onAction="#sendNotification"/>
+            <Button fx:id="update" mnemonicParsing="false" onAction="#sendNotification" style="-fx-background-color: yellow; -fx-border-color: dark blue;" text="Send Notification" BorderPane.alignment="CENTER" />
          </right>
+         <left>
+            <ImageView blendMode="OVERLAY" fitHeight="150.0" fitWidth="186.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../../../Downloads/beecafb48ec867e3981ff93dd5609ec9.jpg" />
+               </image>
+            </ImageView>
+         </left>
       </BorderPane>
    </top>
    <center>
       <!-- Table to display notifications -->
-      <TableView fx:id="notificationTable" prefHeight="300.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="notificationTable" prefHeight="284.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="notificationIdColumn" prefWidth="100.0" text="Notification ID" />
           <TableColumn fx:id="titleColumn" prefWidth="150.0" text="Title" />
@@ -40,4 +49,3 @@
       <Text fx:id="statusText" fill="black" layoutX="10.0" layoutY="12.0" text="Status: Waiting to load notifications..." />
    </bottom>
 </BorderPane>
-
