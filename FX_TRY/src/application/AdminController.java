@@ -227,7 +227,13 @@ public class AdminController {
     }
 
     }
-   
+
+
+
+//admin class acts as the information expert class
+// it keeps tracks of the information about the various buttons
+//high cohesion is implemented means that each class has its own functionality and works in theri respective domains
+
     
     
     

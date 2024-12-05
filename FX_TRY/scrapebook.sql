@@ -239,7 +239,11 @@ INSERT INTO Dispute (first_party_name, second_party_name, description)
 VALUES 
 ('John Doe', 'Jane Smith', 'Dispute over property ownership.'),
 ('Alice Johnson', 'Bob Williams', 'Conflict regarding payment settlement.'),
-('Charlie Brown', 'Lucy Van Pelt', 'Argument over intellectual property rights.');
+('Charlie Brown', 'Lucy Van Pelt', 'Argument over intellectual property rights.'),
+('Sherlock Holmes', 'Dr. John Watson', 'Dispute over credit for solving a case.')
+('Mario', 'Luigi', 'Argument over who gets the last mushroom.')
+('Frodo Baggins', 'Samwise Gamgee', 'Disagreement about who carried the heavier load to Mount Doom.');
+
 
 
 
